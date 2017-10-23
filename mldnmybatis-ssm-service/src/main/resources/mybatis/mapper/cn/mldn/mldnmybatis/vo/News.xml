@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- 设置命名空间，可以与不同表的同类型操作进行区分，使用时以“空间名称.id”的方式调用 -->
-<mapper namespace="cn.mldn.mapping.NewsNS">
+<!-- 要实现去数据层编写，该命名空间必须与DAO接口名称完全一致 -->
+<mapper namespace="cn.mldn.mldnmybatis.dao.INewsDAO">
 	<resultMap type="News" id="NewsResultMap">
 		<id property="nid" column="nid" />	<!-- property表示类属性， column表示列名称 -->
 		<result property="title" column="title" />

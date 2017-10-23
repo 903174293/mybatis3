@@ -11,5 +11,14 @@
 		<property name="dataSource" ref="dataSource"/>	<!-- 引入数据源 -->
 		<!-- 引入MyBatis的核心配置文件，实际上这个类可以直接完成该配置文件的定义 -->
 		<property name="configLocation" value="classpath:mybatis/mybatis.cfg.xml"/>
-	</bean> 
+		<!-- 定义所有要引入的映射资源文件的地址 -->
+		<property name="mapperLocations" value="classpath:mybatis/mapper/cn/mldn/mldnmybatis/vo/*.xml"/>
+	</bean>
+	<!-- 配置一个资源文件的扫描处理类，扫描后的文件自动为DAO实现类 --> 
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 定义资源的扫描程序包，这个包下的内容可以自动转换为DAO接口对象 -->
+		<property name="basePackage" value="cn.mldn.mldnmybatis.dao"/> 
+		<!-- 定义要使用的SqlSessionFactory程序类 -->
+		<property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
+	</bean>
 </beans>

@@ -1,5 +1,6 @@
 package cn.mldn.mldnmybatis.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class NewsServiceImpl extends AbstractService implements INewsService {
 		if (ids == null || ids.size() == 0) {
 			return null;
 		}
-		return this.newsDAO.findByIds(ids);
+		return this.newsDAO.findByIds(ids.toArray());
 	}
 
 }

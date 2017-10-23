@@ -37,6 +37,8 @@
 
 		<!-- 配置一些环境的属性信息 -->
 		<jdk.version>1.8</jdk.version>
+		<profiles.dir>src/main/profiles</profiles.dir>
+		<resources.dir>src/main/resources</resources.dir>
 	</properties>
 	<profiles>	<!-- 明确的进行具体的资源名称的配置，这个名称是在maven打包的时候使用的名称 -->
 		<profile>
