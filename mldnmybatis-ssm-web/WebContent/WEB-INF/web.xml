@@ -1,12 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>mldnmybatis-ssm-web</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>mldnspring-springmvc</display-name>
+	<!-- 进行Spring容器启动的监听器配置，这样就表示可以加载Spring中的核心配置文件 -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<!-- 设置上下文参数，实际上就是设置application属性，等价于setAttribute() -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>	<!-- Spring之中定义的属性名称 -->
+		<param-value>classpath:spring/spring-*.xml</param-value><!-- 资源文件 -->
+	</context-param>
+	
+	<!-- 设置SpringMVC之中的核心控制器类，利用此类实现所有的请求分发的处理（Action） -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>	<!-- 定义SpringMVC自己的配置文件 -->
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/spring-mvc.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>	<!-- SpringMVC设计之中的路径都是以action结尾的 -->
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.action</url-pattern>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping> 
+	
+	<!-- 配置编码过滤器，以解决数据传输乱码问题 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>	<!-- 设置要使用的编码 -->
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value> 
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
 </web-app>

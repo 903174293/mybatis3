@@ -7,17 +7,6 @@
 		<!-- 设置了包名称，则以后的别名就是各个VO的类名称 -->
 		<package name="cn.mldn.mldnmybatis.vo"/>
 	</typeAliases>
-	<environments default="development">		<!-- 配置数据源的相关信息 -->
-		<environment id="development">
-			<transactionManager type="jdbc" />	<!-- 使用JDBC方式管理 -->
-			<dataSource type="POOLED">			<!-- 设置数据源类型，此时为POOLED -->
-				<property name="driver" value="org.gjt.mm.mysql.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3306/mldn" />
-				<property name="username" value="root" />
-				<property name="password" value="mysqladmin" />
-			</dataSource>
-		</environment>
-	</environments>
 	<mappers>									<!-- 映射文件信息 -->
 		<mapper resource="mybatis/mapper/cn/mldn/mldnmybatis/vo/News.xml" />
 	</mappers>

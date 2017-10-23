@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	<!-- 在开发之中C3P0数据库连接池使用非常广泛 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${db.driverClass}"/>	<!-- 驱动程序 -->
+		<property name="jdbcUrl" value="${db.jdbcUrl}"/>	<!-- 连接地址 -->
+		<property name="user" value="${db.user}"/>	<!-- 用户名 -->
+		<property name="password" value="${db.password}"/>	<!-- 密码 -->
+		<property name="maxPoolSize" value="${db.maxPoolSize}"/>	<!-- 设置最大连接 -->
+		<property name="initialPoolSize" value="${db.initialPoolSize}"/>	<!-- 初始化连接池大小 -->
+		<property name="minPoolSize" value="${db.minPoolSize}"/> <!-- 连接池最小的连接数 -->
+		<property name="maxIdleTime" value="${db.maxIdleTime}"/>	<!-- 最大等待时间 -->
+	</bean>	
+	
+	<!-- 此时就将数据库连接对象交由Spring负责管理 -->
+<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/mldn"/>
+		<property name="username" value="root"/>
+		<property name="password" value="mysqladmin"/>
+	</bean> -->
+	
+	<!-- 定义注解的扫描包，也就是说你必须配置好扫描包之后才可以扫描该包中所有类上出现的注解信息 -->
+	<context:component-scan base-package="cn.mldn.mldnspring"/>
+</beans>
