@@ -3,6 +3,13 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 设置命名空间，可以与不同表的同类型操作进行区分，使用时以“空间名称.id”的方式调用 -->
 <mapper namespace="cn.mldn.mapping.NewsNS">
+	<delete id="doRemove" parameterType="java.lang.Long">
+		DELETE FROM news WHERE nid=#{nidParam} ;
+	</delete>
+
+	<update id="doEdit" parameterType="News">
+		UPDATE news SET title=#{title},note=#{note} WHERE nid=#{nid} ;
+	</update>
 	<!-- 定义增加数据的操作配置，同时指定参数类型 -->
 	<insert id="doCreate" parameterType="News" keyProperty="nid"
 			useGeneratedKeys="true">	<!-- 使用别名 --> 

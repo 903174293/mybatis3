@@ -9,3 +9,20 @@
 2017-10-23 11:35:09,809 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - ==>  Preparing: INSERT INTO news(title,pub_date,note) VALUES (?,?,?) 
 2017-10-23 11:35:09,847 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - ==> Parameters: 新闻标题 - 670777223(String), 2017-10-23 11:35:09.167(Timestamp), 新闻内容 - 670777223(String)
 2017-10-23 11:35:09,848 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - <==    Updates: 1
+2017-10-23 11:40:44,399 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - ==>  Preparing: INSERT INTO news(title,pub_date,note) VALUES (?,?,?) 
+2017-10-23 11:40:44,446 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - ==> Parameters: 新闻标题 - 47504996(String), 2017-10-23 11:40:43.804(Timestamp), 新闻内容 - 47504996(String)
+2017-10-23 11:40:44,447 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - <==    Updates: 1
+2017-10-23 11:40:54,113 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - ==>  Preparing: INSERT INTO news(title,pub_date,note) VALUES (?,?,?) 
+2017-10-23 11:40:54,150 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - ==> Parameters: 新闻标题 - 677874677(String), 2017-10-23 11:40:53.509(Timestamp), 新闻内容 - 677874677(String)
+2017-10-23 11:40:54,150 DEBUG [cn.mldn.mapping.NewsNS.doCreate] - <==    Updates: 1
+2017-10-23 11:45:39,096 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==>  Preparing: UPDATE news SET title=?,note=? WHERE nid=? ; 
+2017-10-23 11:45:39,125 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==> Parameters: 约翰的一生都在约汉(String), 感染了许多的疾病，人生很困苦，人生一定要保守。(String), 3(Long)
+2017-10-23 11:45:39,138 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - <==    Updates: 1
+2017-10-23 11:46:17,693 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==>  Preparing: UPDATE news SET title=?,note=? WHERE nid=? ; 
+2017-10-23 11:46:17,722 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==> Parameters: 约翰的一生都在约汉(String), 感染了许多的疾病，人生很困苦，人生一定要保守。(String), 3(Long)
+2017-10-23 11:46:17,723 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - <==    Updates: 1
+2017-10-23 11:49:54,143 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - ==>  Preparing: DELETE FROM news WHERE nid=? ; 
+2017-10-23 11:50:07,059 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - ==>  Preparing: DELETE FROM news WHERE nid=? ; 
+2017-10-23 11:50:18,676 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - ==>  Preparing: DELETE FROM news WHERE nid=? ; 
+2017-10-23 11:50:18,714 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - ==> Parameters: 1(Long)
+2017-10-23 11:50:18,715 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - <==    Updates: 1
