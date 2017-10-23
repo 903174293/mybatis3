@@ -11,6 +11,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<mldnmybatis.version>0.0.1</mldnmybatis.version>
 		<!-- 配置MyBatis相关开发依赖包版本 -->
 		<mybatis.version>3.4.5</mybatis.version>
 		<mysql.version>5.1.5</mysql.version>
@@ -65,6 +66,12 @@
 	</profiles>
 	<dependencyManagement>
 		<dependencies>
+
+	<dependency>
+		<groupId>cn.mldn</groupId>
+		<artifactId>mldnmybatis-ssm-service</artifactId>
+		<version>${mldnmybatis.version}</version>
+	</dependency>
 
 			<dependency>
 				<groupId>com.mchange</groupId>

@@ -13,7 +13,7 @@
 	<!-- 设置上下文参数，实际上就是设置application属性，等价于setAttribute() -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>	<!-- Spring之中定义的属性名称 -->
-		<param-value>classpath:spring/spring-*.xml</param-value><!-- 资源文件 -->
+		<param-value>classpath*:spring/spring-*.xml,classpath:spring/spring-*.xml</param-value><!-- 资源文件 -->
 	</context-param>
 	
 	<!-- 设置SpringMVC之中的核心控制器类，利用此类实现所有的请求分发的处理（Action） -->

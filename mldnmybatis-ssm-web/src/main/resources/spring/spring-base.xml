@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	<!-- 定义注解的扫描包，也就是说你必须配置好扫描包之后才可以扫描该包中所有类上出现的注解信息 -->
-	<context:component-scan base-package="cn.mldn.mldnspring"/>
+	<context:component-scan base-package="cn.mldn"/>
 	<!-- 引入指定目录之中的配置文件 -->
-	<context:property-placeholder location="classpath:config/*.properties"/>
+	<context:property-placeholder location="classpath*:config/*.properties,classpath:config/*.properties"/>
 </beans>

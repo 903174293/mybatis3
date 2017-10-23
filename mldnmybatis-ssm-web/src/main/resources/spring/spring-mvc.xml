@@ -11,15 +11,15 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<context:annotation-config/>	<!-- 启用注解配置 -->
-	<context:component-scan base-package="cn.mldn.mldnspring"/>
+	<context:component-scan base-package="cn.mldn"/>
 	<mvc:annotation-driven/>	<!-- 启用SpringMVC注解配置支持 -->
 	<mvc:default-servlet-handler/>	<!-- 启动Servlet的配置处理 -->
-	<mvc:interceptors>	<!-- 定义拦截器，而且可以定义多个 -->
+<!-- 	<mvc:interceptors>	定义拦截器，而且可以定义多个
 		<mvc:interceptor>
-			<mvc:mapping path="/pages/**/*.action"/>	<!-- 提交到Action请求执行本拦截器 -->
+			<mvc:mapping path="/pages/**/*.action"/>	提交到Action请求执行本拦截器
 			<bean class="cn.mldn.util.ValidationInterceptor"/>
 		</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors> -->
 	
 	
 	
