@@ -1,6 +1,9 @@
 package cn.mldn.mldnmybatis.crud;
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.junit.Test;
@@ -23,6 +26,7 @@ public class TestNewsCRUD {
 		TestCase.assertNotNull(vo);
 		System.err.println(vo);
 	}
+	
 
 	@Test
 	public void testNewsRemove() throws Exception {
@@ -32,7 +36,36 @@ public class TestNewsCRUD {
 		MyBatisSessionFactory.close();
 		TestCase.assertEquals(len, 1); // 如果更新行数为1表示成功
 	}
-
+	@Test
+	public void testNewsList() throws Exception {
+		List<News> newsList = MyBatisSessionFactory.getSession().selectList("cn.mldn.mapping.NewsNS.findAll") ;
+		Iterator<News> iter = newsList.iterator() ;
+		while (iter.hasNext()) {
+			News vo = iter.next() ;
+			System.out.println(vo); 
+		}
+		MyBatisSessionFactory.close();
+	}
+	
+	@Test
+	public void testNewsMap() throws Exception {
+		// 使用Map集合进行处理，首先要设置使用的SQL语句，而后要设置一个描述key的列名称（此处的key为nid）
+		Map<Long,Map<String,Object>> map = MyBatisSessionFactory.getSession().selectMap("cn.mldn.mapping.NewsNS.findMap","nid") ;
+		Iterator<Map.Entry<Long, Map<String, Object>>> newsMap = map.entrySet().iterator() ;
+		while (newsMap.hasNext()) {
+			Map.Entry<Long, Map<String, Object>> newsME = newsMap.next() ;
+			System.err.println("key = " + newsME.getKey() + "、value：");
+			Map<String,Object> newsTemp = newsME.getValue() ;	// 获取每一组数据 
+			Iterator<Map.Entry<String,Object>> iter = newsTemp.entrySet().iterator() ;
+			while (iter.hasNext()) {
+				Map.Entry<String,Object> me = iter.next() ;
+				System.out.println("\t|- " + me.getKey() + " = " + me.getValue());
+			}
+		}
+		MyBatisSessionFactory.close();
+	} 
+	
+	 
 	@Test
 	public void testNewsEdit() throws Exception {
 		News vo = new News();

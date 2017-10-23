@@ -13,6 +13,16 @@
 	<select id="findById" resultMap="NewsResultMap" parameterType="long">
 		SELECT nid,title,pub_date,note FROM news WHERE nid=#{nid} ;
 	</select> 
+	<!-- 查询全部之中的resultType描述的是集合里面的每一项具体的类型 -->
+	<select id="findAll" resultType="News">
+		SELECT nid,title,pub_date AS pubdate,note FROM news ;
+	</select>	
+ 	
+ 	<!-- 查询结果以Map的形式，Map集合之中包含有key=主键、value=对象Map集合 -->
+	<select id="findMap" resultType="Map">
+		SELECT nid,title,pub_date AS pubdate,note FROM news ;
+	</select>	
+ 	
 
 	<delete id="doRemove" parameterType="java.lang.Long">
 		DELETE FROM news WHERE nid=#{nidParam} ;

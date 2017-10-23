@@ -46,3 +46,67 @@
 2017-10-23 12:02:27,661 TRACE [cn.mldn.mapping.NewsNS.findById] - <==    Columns: nid, title, pub_date, note
 2017-10-23 12:02:27,666 TRACE [cn.mldn.mapping.NewsNS.findById] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
 2017-10-23 12:02:27,668 DEBUG [cn.mldn.mapping.NewsNS.findById] - <==      Total: 1
+2017-10-23 13:03:39,935 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==>  Preparing: SELECT nid,title,note FROM news ; 
+2017-10-23 13:03:39,965 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==> Parameters: 
+2017-10-23 13:03:39,980 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==    Columns: nid, title, note
+2017-10-23 13:03:39,980 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 2, 新闻标题 - 1721418800, <<BLOB>>
+2017-10-23 13:03:39,984 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 3, 约翰的一生都在约汉, <<BLOB>>
+2017-10-23 13:03:39,984 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 4, 新闻标题 - 47504996, <<BLOB>>
+2017-10-23 13:03:39,984 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 5, 新闻标题 - 677874677, <<BLOB>>
+2017-10-23 13:03:39,985 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
+2017-10-23 13:34:54,963 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:34:54,991 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==> Parameters: 
+2017-10-23 13:34:55,006 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:34:55,011 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:34:55,015 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:34:55,016 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:34:55,016 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:34:55,017 DEBUG [cn.mldn.mapping.NewsNS.findAll] - <==      Total: 4
+2017-10-23 13:35:31,177 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:35:31,211 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==> Parameters: 
+2017-10-23 13:35:31,229 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:35:31,234 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:35:31,238 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:35:31,238 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:35:31,238 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:35:31,239 DEBUG [cn.mldn.mapping.NewsNS.findAll] - <==      Total: 4
+2017-10-23 13:40:07,900 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:40:07,938 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==> Parameters: 
+2017-10-23 13:40:07,952 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:40:07,957 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:40:07,962 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:40:07,962 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:40:07,963 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:40:07,964 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
+2017-10-23 13:41:56,702 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:41:56,731 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==> Parameters: 
+2017-10-23 13:41:56,746 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:41:56,751 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:41:56,755 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:41:56,756 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:41:56,756 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:41:56,757 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
+2017-10-23 13:42:11,995 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:42:12,027 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==> Parameters: 
+2017-10-23 13:42:12,042 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:42:12,047 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:42:12,051 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:42:12,052 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:42:12,052 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:42:12,053 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
+2017-10-23 13:42:46,000 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:42:46,036 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==> Parameters: 
+2017-10-23 13:42:46,050 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:42:46,055 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:42:46,059 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:42:46,059 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:42:46,060 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:42:46,060 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
+2017-10-23 13:44:38,783 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news ; 
+2017-10-23 13:44:38,812 DEBUG [cn.mldn.mapping.NewsNS.findMap] - ==> Parameters: 
+2017-10-23 13:44:38,827 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==    Columns: nid, title, pubdate, note
+2017-10-23 13:44:38,832 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 13:44:38,837 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 13:44:38,837 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 13:44:38,837 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 13:44:38,838 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
