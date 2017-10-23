@@ -122,5 +122,6 @@
 	</build>
 	<modules>
 		<module>mldnmybatis-base</module>
+		<module>mldnmybatis-util</module>
 	</modules>
 </project>
