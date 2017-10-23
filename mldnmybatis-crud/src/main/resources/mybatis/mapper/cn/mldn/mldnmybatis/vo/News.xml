@@ -3,6 +3,17 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 设置命名空间，可以与不同表的同类型操作进行区分，使用时以“空间名称.id”的方式调用 -->
 <mapper namespace="cn.mldn.mapping.NewsNS">
+	<resultMap type="News" id="NewsResultMap">
+		<id property="nid" column="nid"/>	<!-- property表示类属性， column表示列名称 -->
+		<result property="title" column="title"/>
+		<result property="pubdate" column="pub_date"/>
+		<result property="note" column="note"/>
+	</resultMap>
+	<!-- 现在给出的返回类型实际上就表示最终查询语句之中的行的转换类型，自动根据列名称转换 -->
+	<select id="findById" resultMap="NewsResultMap" parameterType="long">
+		SELECT nid,title,pub_date,note FROM news WHERE nid=#{nid} ;
+	</select> 
+
 	<delete id="doRemove" parameterType="java.lang.Long">
 		DELETE FROM news WHERE nid=#{nidParam} ;
 	</delete>

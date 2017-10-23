@@ -17,8 +17,16 @@ public class TestNewsCRUD {
 	}
 
 	@Test
+	public void testFindById() throws Exception {	
+		// 查询数据并且直接以VO的类型返回
+		News vo = MyBatisSessionFactory.getSession().selectOne("cn.mldn.mapping.NewsNS.findById", 3L);
+		TestCase.assertNotNull(vo);
+		System.err.println(vo);
+	}
+
+	@Test
 	public void testNewsRemove() throws Exception {
-		long nid = 1 ;
+		long nid = 1;
 		int len = MyBatisSessionFactory.getSession().delete("cn.mldn.mapping.NewsNS.doRemove", nid);
 		MyBatisSessionFactory.getSession().commit();
 		MyBatisSessionFactory.close();

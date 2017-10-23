@@ -26,3 +26,23 @@
 2017-10-23 11:50:18,676 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - ==>  Preparing: DELETE FROM news WHERE nid=? ; 
 2017-10-23 11:50:18,714 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - ==> Parameters: 1(Long)
 2017-10-23 11:50:18,715 DEBUG [cn.mldn.mapping.NewsNS.doRemove] - <==    Updates: 1
+2017-10-23 11:58:02,389 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE nid=? ; 
+2017-10-23 11:58:02,420 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==> Parameters: 3(Long)
+2017-10-23 11:58:02,435 TRACE [cn.mldn.mapping.NewsNS.findById] - <==    Columns: nid, title, pub_date, note
+2017-10-23 11:58:02,439 TRACE [cn.mldn.mapping.NewsNS.findById] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 11:58:02,443 DEBUG [cn.mldn.mapping.NewsNS.findById] - <==      Total: 1
+2017-10-23 11:59:59,742 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE nid=? ; 
+2017-10-23 11:59:59,771 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==> Parameters: 3(Long)
+2017-10-23 11:59:59,791 TRACE [cn.mldn.mapping.NewsNS.findById] - <==    Columns: nid, title, pubdate, note
+2017-10-23 11:59:59,796 TRACE [cn.mldn.mapping.NewsNS.findById] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 11:59:59,800 DEBUG [cn.mldn.mapping.NewsNS.findById] - <==      Total: 1
+2017-10-23 12:02:12,276 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE nid=? ; 
+2017-10-23 12:02:12,305 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==> Parameters: 3(Long)
+2017-10-23 12:02:12,327 TRACE [cn.mldn.mapping.NewsNS.findById] - <==    Columns: nid, title, pubdate, note
+2017-10-23 12:02:12,331 TRACE [cn.mldn.mapping.NewsNS.findById] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 12:02:12,333 DEBUG [cn.mldn.mapping.NewsNS.findById] - <==      Total: 1
+2017-10-23 12:02:27,609 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE nid=? ; 
+2017-10-23 12:02:27,647 DEBUG [cn.mldn.mapping.NewsNS.findById] - ==> Parameters: 3(Long)
+2017-10-23 12:02:27,661 TRACE [cn.mldn.mapping.NewsNS.findById] - <==    Columns: nid, title, pub_date, note
+2017-10-23 12:02:27,666 TRACE [cn.mldn.mapping.NewsNS.findById] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 12:02:27,668 DEBUG [cn.mldn.mapping.NewsNS.findById] - <==      Total: 1
