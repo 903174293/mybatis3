@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 设置命名空间，可以与不同表的同类型操作进行区分，使用时以“空间名称.id”的方式调用 -->
+<mapper namespace="cn.mldn.mapping.NewsNS">
+	<resultMap type="News" id="NewsResultMap">
+		<id property="nid" column="nid" />	<!-- property表示类属性， column表示列名称 -->
+		<result property="title" column="title" />
+		<result property="pubdate" column="pub_date" />
+		<result property="note" column="note" />
+	</resultMap>
+	<sql id="selectBase">
+		SELECT nid,title,pub_date AS pubdate,note FROM news
+	</sql>
+	<!-- 利用循环可以实现根据指定ID查询数据的功能，其中参数类型为每一个id的类型 -->
+	<select id="findByIds" resultType="News" parameterType="Long">
+		<include refid="selectBase"/>
+		<where>
+			nid IN  
+			<foreach collection="list" open="(" close=")" separator="," item="ele">
+				#{ele} 
+			</foreach>
+		</where>
+	</select>
+	
+	<update id="doEdit" parameterType="News">
+		UPDATE news 
+		<set>
+			<if test="title != null">
+				title=#{title} ,
+			</if>
+			<if test="note != null">
+				note=#{note} ,
+			</if>
+		</set>
+		<where>
+			nid=#{nid}
+		</where>
+	</update> 
+	
+	<!-- 查询全部之中的resultType描述的是集合里面的每一项具体的类型 -->
+	<select id="findSplit" resultType="News" parameterType="Map">
+		SELECT nid,title,pub_date AS pubdate,note FROM news
+		<where>
+			<if test="column != null and keyWord != null">
+				${column} LIKE #{keyWord}
+			</if>
+		</where>
+	</select> 
+	
+	<!-- 查询全部之中的resultType描述的是集合里面的每一项具体的类型 -->
+	<select id="findAll" resultType="News" parameterType="Map">
+		SELECT nid,title,pub_date AS pubdate,note FROM news
+		<where>
+			<choose>
+				<when test="title != null and title != &quot;&quot; and nid!=null">
+					nid=#{nid} AND title=#{title}
+				</when>
+				<when test="nid != null">
+					nid=#{nid}
+				</when>
+				<otherwise>
+					title=#{title}
+				</otherwise>
+			</choose>
+		</where>
+	</select> 
+</mapper>
