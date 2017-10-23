@@ -1,0 +1,18 @@
+2017-10-23 15:28:53,662 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news 
+2017-10-23 15:28:53,691 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==> Parameters: 
+2017-10-23 15:28:53,723 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==    Columns: nid, title, pubdate, note
+2017-10-23 15:28:53,727 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 15:28:53,732 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 15:28:53,732 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 15:28:53,732 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 15:28:53,733 DEBUG [cn.mldn.mapping.NewsNS.findAll] - <==      Total: 4
+2017-10-23 15:32:05,407 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE title=? 
+2017-10-23 15:32:05,443 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==> Parameters: 约翰的一生都在约汉(String)
+2017-10-23 15:32:05,462 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==    Columns: nid, title, pubdate, note
+2017-10-23 15:32:05,466 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 15:32:05,470 DEBUG [cn.mldn.mapping.NewsNS.findAll] - <==      Total: 1
+2017-10-23 15:34:49,519 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE title=? 
+2017-10-23 15:34:49,549 DEBUG [cn.mldn.mapping.NewsNS.findAll] - ==> Parameters: 约翰的一生都在约汉(String)
+2017-10-23 15:34:49,563 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==    Columns: nid, title, pubdate, note
+2017-10-23 15:34:49,568 TRACE [cn.mldn.mapping.NewsNS.findAll] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 15:34:49,572 DEBUG [cn.mldn.mapping.NewsNS.findAll] - <==      Total: 1
