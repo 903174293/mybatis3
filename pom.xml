@@ -130,5 +130,6 @@
 	<modules>
 		<module>mldnmybatis-base</module>
 		<module>mldnmybatis-util</module>
+		<module>mldnmybatis-crud</module>
 	</modules>
 </project>
