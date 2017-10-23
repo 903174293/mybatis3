@@ -14,6 +14,7 @@
 		<!-- 配置MyBatis相关开发依赖包版本 -->
 		<mybatis.version>3.4.5</mybatis.version>
 		<mysql.version>5.1.5</mysql.version>
+		<mldnmybatis.version>0.0.1</mldnmybatis.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.12</junit.version>
@@ -30,6 +31,12 @@
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+		<dependency>
+			<groupId>cn.mldn</groupId>
+			<artifactId>mldnmybatis-util</artifactId>
+			<version>${mldnmybatis.version}</version>
+		</dependency>
+		
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
