@@ -1,6 +1,7 @@
 package cn.mldn.mldnmybatis.crud;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,37 @@ public class TestNewsCRUD {
 	@Test
 	public void testNewsList() throws Exception {
 		List<News> newsList = MyBatisSessionFactory.getSession().selectList("cn.mldn.mapping.NewsNS.findAll") ;
+		Iterator<News> iter = newsList.iterator() ;
+		while (iter.hasNext()) {
+			News vo = iter.next() ;
+			System.out.println(vo); 
+		}
+		MyBatisSessionFactory.close();
+	}
+	@Test
+	public void testSplitCount() {
+		String column = "title" ;	// 传递进来的处理参数
+		String keyWord = "新闻" ;	// 传递进来的处理参数
+		Map<String,Object> map = new HashMap<String,Object>() ;
+		map.put("column", column);
+		map.put("keyWord", "%" + keyWord + "%") ;
+		Long count = MyBatisSessionFactory.getSession().selectOne("cn.mldn.mapping.NewsNS.getSplitCount",map) ;
+		System.err.println(count); 
+		MyBatisSessionFactory.close();
+	} 
+	
+	@Test
+	public void testSplit() {
+		Long currentPage = 1L ;	// 传递进来的处理参数
+		Integer lineSize = 2 ;	// 传递进来的处理参数
+		String column = "title" ;	// 传递进来的处理参数
+		String keyWord = "新闻" ;	// 传递进来的处理参数
+		Map<String,Object> map = new HashMap<String,Object>() ;
+		map.put("startPage", (currentPage - 1) * lineSize) ;// 一定要在外部处理
+		map.put("lineSize", lineSize) ;
+		map.put("column", column);
+		map.put("keyWord", "%" + keyWord + "%") ;
+		List<News> newsList = MyBatisSessionFactory.getSession().selectList("cn.mldn.mapping.NewsNS.findSplit",map) ;
 		Iterator<News> iter = newsList.iterator() ;
 		while (iter.hasNext()) {
 			News vo = iter.next() ;
