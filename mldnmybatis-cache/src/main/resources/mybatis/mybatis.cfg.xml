@@ -3,6 +3,9 @@
     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<settings>	<!-- 进行环境的配置 -->
+		<setting name="cacheEnabled" value="true"/>	<!-- 开启缓存支持 -->
+	</settings>
 	<typeAliases>	<!-- 定义所有要使用类的别名 -->
 		<!-- 设置了包名称，则以后的别名就是各个VO的类名称 -->
 		<package name="cn.mldn.mldnmybatis.vo"/>

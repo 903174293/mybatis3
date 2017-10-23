@@ -2,7 +2,7 @@ package cn.mldn.mldnmybatis.vo;
 
 import java.util.Date;
 
-public class News {
+public class News implements java.io.Serializable{
 	private Long nid;
 	private String title;
 	private Date pubdate; // 名字和列不同

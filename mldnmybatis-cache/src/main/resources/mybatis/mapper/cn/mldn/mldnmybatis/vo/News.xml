@@ -3,6 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 设置命名空间，可以与不同表的同类型操作进行区分，使用时以“空间名称.id”的方式调用 -->
 <mapper namespace="cn.mldn.mapping.NewsNS">
+	<cache eviction="LRU" size="512" flushInterval="1000" readOnly="true"/>	<!-- 表示此配置文件之中的查询支持有二级缓存 -->
 	<resultMap type="News" id="NewsResultMap">
 		<id property="nid" column="nid"/>	<!-- property表示类属性， column表示列名称 -->
 		<result property="title" column="title"/>
