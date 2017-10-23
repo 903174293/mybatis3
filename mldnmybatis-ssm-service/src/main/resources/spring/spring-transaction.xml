@@ -19,8 +19,11 @@
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>	<!-- 配置事务控制属性，事务控制是以业务层的方法为主的 -->
 			<tx:method name="add*" propagation="REQUIRED"/>	<!-- 设置了事务传播属性 -->
+			<tx:method name="create*" propagation="REQUIRED"/>	<!-- 设置了事务传播属性 -->
+			<tx:method name="update*" propagation="REQUIRED"/>	<!-- 设置了事务传播属性 -->
 			<tx:method name="edit*" propagation="REQUIRED"/>	<!-- 设置了事务传播属性 -->
 			<tx:method name="remove*" propagation="REQUIRED"/>	<!-- 设置了事务传播属性 -->
+			<tx:method name="delete*" propagation="REQUIRED"/>	<!-- 设置了事务传播属性 -->
 			<tx:method name="get*" propagation="REQUIRED" read-only="true"/>
 			<tx:method name="list*" propagation="REQUIRED" read-only="true"/>
 		</tx:attributes>
