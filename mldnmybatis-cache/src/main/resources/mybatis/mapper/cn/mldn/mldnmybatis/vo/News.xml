@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 设置命名空间，可以与不同表的同类型操作进行区分，使用时以“空间名称.id”的方式调用 -->
+<mapper namespace="cn.mldn.mapping.NewsNS">
+	<resultMap type="News" id="NewsResultMap">
+		<id property="nid" column="nid"/>	<!-- property表示类属性， column表示列名称 -->
+		<result property="title" column="title"/>
+		<result property="pubdate" column="pub_date"/>
+		<result property="note" column="note"/>
+	</resultMap>
+	<!-- 由于此时需要传递有四个参数，那么就必须通过Map传递，所出现的内容全部为Map中的key -->
+	<select id="findSplit" resultType="News" parameterType="map">
+		SELECT nid,title,pub_date,note 
+		FROM news WHERE ${column} LIKE #{keyWord}
+		LIMIT #{startPage},#{lineSize} ;
+	</select> 
+	<!-- 查询复合条件的数据个数 -->
+	<select id="getSplitCount" resultType="long" parameterType="map">
+		SELECT COUNT(*) FROM news WHERE ${column} LIKE #{keyWord}
+	</select>
+	
+	<!-- 现在给出的返回类型实际上就表示最终查询语句之中的行的转换类型，自动根据列名称转换 -->
+	<select id="findById" resultMap="NewsResultMap" parameterType="long">
+		SELECT nid,title,pub_date,note FROM news WHERE nid=#{nid} ;
+	</select> 
+	<!-- 查询全部之中的resultType描述的是集合里面的每一项具体的类型 -->
+	<select id="findAll" resultType="News">
+		SELECT nid,title,pub_date AS pubdate,note FROM news ;
+	</select>	
+ 	
+ 	<!-- 查询结果以Map的形式，Map集合之中包含有key=主键、value=对象Map集合 -->
+	<select id="findMap" resultType="Map">
+		SELECT nid,title,pub_date AS pubdate,note FROM news ;
+	</select>	
+ 	
+
+	<delete id="doRemove" parameterType="java.lang.Long">
+		DELETE FROM news WHERE nid=#{nidParam} ;
+	</delete>
+
+	<update id="doEdit" parameterType="News">
+		UPDATE news SET title=#{title},note=#{note} WHERE nid=#{nid} ;
+	</update>
+	<!-- 定义增加数据的操作配置，同时指定参数类型 -->
+	<insert id="doCreate" parameterType="News" keyProperty="nid"
+			useGeneratedKeys="true">	<!-- 使用别名 --> 
+		INSERT INTO news(title,pub_date,note)
+		VALUES (#{title},#{pubdate},#{note}) 
+	</insert>
+</mapper>
