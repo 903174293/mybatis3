@@ -9,6 +9,19 @@
 		<result property="pubdate" column="pub_date" />
 		<result property="note" column="note" />
 	</resultMap>
+	<sql id="selectBase">
+		SELECT nid,title,pub_date AS pubdate,note FROM news
+	</sql>
+	<!-- 利用循环可以实现根据指定ID查询数据的功能，其中参数类型为每一个id的类型 -->
+	<select id="findByIds" resultType="News" parameterType="Long">
+		<include refid="selectBase"/>
+		<where>
+			nid IN  
+			<foreach collection="list" open="(" close=")" separator="," item="ele">
+				#{ele} 
+			</foreach>
+		</where>
+	</select>
 	
 	<update id="doEdit" parameterType="News">
 		UPDATE news 

@@ -48,3 +48,22 @@
 2017-10-23 15:55:07,861 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==>  Preparing: UPDATE news SET title=? , note=? WHERE nid=? 
 2017-10-23 15:55:07,895 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==> Parameters: 晚上小强请吃饭，蒸蛋糕。(String), 不吃白不吃， 吃了给银子，每人3两(String), 2(Long)
 2017-10-23 15:55:07,896 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - <==    Updates: 1
+2017-10-23 16:00:44,038 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE title LIKE ? 
+2017-10-23 16:00:44,070 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %新闻%(String)
+2017-10-23 16:00:44,084 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pubdate, note
+2017-10-23 16:00:44,089 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 16:00:44,093 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
+2017-10-23 16:00:44,093 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
+2017-10-23 16:00:44,094 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 3
+2017-10-23 16:05:09,310 DEBUG [cn.mldn.mapping.NewsNS.findByIds] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE nid IN ( ? , ? , ? ) 
+2017-10-23 16:05:09,342 DEBUG [cn.mldn.mapping.NewsNS.findByIds] - ==> Parameters: 1(Long), 2(Long), 3(Long)
+2017-10-23 16:05:09,374 TRACE [cn.mldn.mapping.NewsNS.findByIds] - <==    Columns: nid, title, pubdate, note
+2017-10-23 16:05:09,378 TRACE [cn.mldn.mapping.NewsNS.findByIds] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 16:05:09,382 TRACE [cn.mldn.mapping.NewsNS.findByIds] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 16:05:09,383 DEBUG [cn.mldn.mapping.NewsNS.findByIds] - <==      Total: 2
+2017-10-23 16:05:49,307 DEBUG [cn.mldn.mapping.NewsNS.findByIds] - ==>  Preparing: SELECT nid,title,pub_date AS pubdate,note FROM news WHERE nid IN ( ? , ? , ? ) 
+2017-10-23 16:05:49,339 DEBUG [cn.mldn.mapping.NewsNS.findByIds] - ==> Parameters: 1(Long), 2(Long), 3(Long)
+2017-10-23 16:05:49,353 TRACE [cn.mldn.mapping.NewsNS.findByIds] - <==    Columns: nid, title, pubdate, note
+2017-10-23 16:05:49,357 TRACE [cn.mldn.mapping.NewsNS.findByIds] - <==        Row: 2, 新闻标题 - 1721418800, 2017-10-23 11:32:59.0, <<BLOB>>
+2017-10-23 16:05:49,361 TRACE [cn.mldn.mapping.NewsNS.findByIds] - <==        Row: 3, 约翰的一生都在约汉, 2017-10-23 11:35:09.0, <<BLOB>>
+2017-10-23 16:05:49,362 DEBUG [cn.mldn.mapping.NewsNS.findByIds] - <==      Total: 2
