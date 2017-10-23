@@ -17,6 +17,15 @@ public class TestNewsCRUD {
 	static {
 		rand = random.nextInt(Integer.MAX_VALUE);
 	}
+	@Test
+	public void testEdit() throws Exception {
+		News vo = new News() ;
+		vo.setTitle("晚上小强请吃饭，蒸蛋糕。");
+		vo.setNid(2L);
+		vo.setNote("不吃白不吃， 吃了给银子，每人3两");
+		int len = MyBatisSessionFactory.getSession().update("cn.mldn.mapping.NewsNS.doEdit",vo) ;
+		System.out.println(len);
+	}
 	
 	@Test
 	public void testNewsSplit() throws Exception {

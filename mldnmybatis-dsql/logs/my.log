@@ -42,3 +42,9 @@
 2017-10-23 15:46:47,740 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 新闻标题 - 47504996, 2017-10-23 11:40:43.0, <<BLOB>>
 2017-10-23 15:46:47,741 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 新闻标题 - 677874677, 2017-10-23 11:40:53.0, <<BLOB>>
 2017-10-23 15:46:47,741 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 3
+2017-10-23 15:54:43,598 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==>  Preparing: UPDATE news SET title=? WHERE nid=? 
+2017-10-23 15:54:43,628 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==> Parameters: 晚上小强请吃饭，蒸蛋糕。(String), 2(Long)
+2017-10-23 15:54:43,640 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - <==    Updates: 1
+2017-10-23 15:55:07,861 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==>  Preparing: UPDATE news SET title=? , note=? WHERE nid=? 
+2017-10-23 15:55:07,895 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - ==> Parameters: 晚上小强请吃饭，蒸蛋糕。(String), 不吃白不吃， 吃了给银子，每人3两(String), 2(Long)
+2017-10-23 15:55:07,896 DEBUG [cn.mldn.mapping.NewsNS.doEdit] - <==    Updates: 1
